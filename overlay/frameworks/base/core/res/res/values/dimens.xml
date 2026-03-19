@@ -20,9 +20,10 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Height of the status bar -->
-    <dimen name="status_bar_height_default">79px</dimen>
-    <dimen name="status_bar_height_portrait">79px</dimen>
-    <dimen name="status_bar_height_landscape">79px</dimen>
+    <dimen name="status_bar_height">110px</dimen>
+    <dimen name="status_bar_height_default">@dimen/status_bar_height</dimen>
+    <dimen name="status_bar_height_portrait">110px</dimen>
+    <dimen name="status_bar_height_landscape">110px</dimen>
 
     <!-- Radius of the software rounded corners. -->
     <dimen name="rounded_corner_radius">8dp</dimen>
