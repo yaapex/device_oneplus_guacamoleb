@@ -1,4 +1,0 @@
-runtime_resource_overlay {
-    name: "EvoXSystemUIOverlay",
-    product_specific: true,
-}

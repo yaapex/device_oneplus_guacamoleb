@@ -4,6 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+$(call inherit-product, device/oneplus/sm8150-common/common.mk)
+
+# Get non-open-source specific aspects
+$(call inherit-product, vendor/oneplus/guacamoleb/guacamoleb-vendor.mk)
+
 # AAPT
 PRODUCT_AAPT_CONFIG := xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -33,7 +38,7 @@ TARGET_BOARD_FASTBOOT_INFO_FILE := $(LOCAL_PATH)/fastboot-info.txt
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-yaap
 
 PRODUCT_PACKAGES += \
     OPlusFrameworksResTarget \
@@ -43,22 +48,11 @@ PRODUCT_PACKAGES += \
 
 # AlertSlider
 PRODUCT_PACKAGES += \
-    EvoXSystemUIOverlay \
     AlertSliderOverlay
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 28
 
-# Remove some prebuilt apps
-PRODUCT_PACKAGES += \
-    RemovePackages
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
-
-# Inherit from the common OEM chipset makefile.
-$(call inherit-product, device/oneplus/sm8150-common/common.mk)
-
-# Inherit from the proprietary files makefile.
-$(call inherit-product, vendor/oneplus/guacamoleb/guacamoleb-vendor.mk)
